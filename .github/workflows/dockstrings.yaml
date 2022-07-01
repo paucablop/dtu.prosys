@@ -12,5 +12,4 @@ jobs:
       uses: jbheard/markdown-docs@v1
     - name: Open docs update PR
       uses: peter-evans/create-pull-request@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+
