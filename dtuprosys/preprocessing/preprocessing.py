@@ -8,7 +8,7 @@ class RangeCut:
         self.start = start
         self.end = end
 
-    def __call__(self, x: pd.DataFrame) -> pd.DataFrame:
+    def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         return x.iloc[:, self.start : self.end]
 
 
@@ -20,8 +20,7 @@ class Derivative:
         self.window_length = window_length
         self.polynomial_order = polynomial_order
 
-    def __call__(self, x: pd.DataFrame) -> pd.DataFrame:
+    def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         return savgol_filter(
             x, self.window_length, self.polynomial_order, deriv=self.derivative_order
         )
-

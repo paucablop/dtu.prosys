@@ -11,7 +11,7 @@ def test_range_cut():
   spectra = load_train_data()[0]
 
   # Act
-  spectra_cut = range_cut(spectra)
+  spectra_cut = range_cut.apply_to(spectra)
 
   # Assert
   assert spectra_cut.shape == (21, 100)
@@ -25,7 +25,7 @@ def test_derivate():
   spectra = load_train_data()[0]
 
   # Act
-  spectra_derivative = derivative(spectra)
+  spectra_derivative = derivative.apply_to(spectra)
 
   # Assert
   assert spectra_derivative.shape == spectra.shape
