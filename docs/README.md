@@ -2,9 +2,9 @@
 
 ## Classes
 
-**[RangeCut](RangeCut.md)**: 
+**[RangeCut](RangeCut.md)**: Cuts a range from a dataframe. 
 
-**[Derivative](Derivative.md)**: 
+**[Derivative](Derivative.md)**: Calculates the derivative of a each row in a dataframe. 
 
 
 ## Functions
