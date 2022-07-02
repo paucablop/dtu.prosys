@@ -7,11 +7,12 @@ class RangeCut:
     """
     Cuts a range from a dataframe.
     """
+
     def __init__(self, start: int, end: int):
         """
         Constructor.
-        @param start: start index
-        @param end: end index
+        @param start: start wavenumber
+        @param end: end wavenumber
         """
         self.start = start
         self.end = end
@@ -22,13 +23,14 @@ class RangeCut:
         @param x: dataframe
         @return: dataframe with cut
         """
-        return x.iloc[:, self.start : self.end]
+        return x.loc[:, self.start : self.end]
 
 
 class Derivative:
     """
     Calculates the derivative of a each row in a dataframe.
     """
+
     def __init__(
         self, derivative_order: int, window_length: int = 15, polynomial_order: int = 1
     ):
@@ -48,6 +50,28 @@ class Derivative:
         @param x: dataframe
         @return: dataframe with derivative
         """
-        return savgol_filter(
+        derivate = pd.DataFrame(savgol_filter(
             x, self.window_length, self.polynomial_order, deriv=self.derivative_order
-        )
+        ))
+        derivate.columns = x.columns
+        return derivate
+
+
+
+class StandardNormalVariate:
+    """
+    Standardizes the dataframe.
+    """
+
+    def __init__(self):
+        pass
+
+    def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
+        """
+        Applies the standardization to the dataframe.
+        @param x: dataframe
+        @return: dataframe with standardization
+        """
+        means = x.mean(axis=1)
+        standard_deviations = x.std(axis=1)
+        return (x - means) / standard_deviations
