@@ -5,8 +5,8 @@ import pandas as pd
 
 def test_range_cut():
   # Arrange
-  start = 0
-  end = 100
+  start = 950
+  end = 1550
   range_cut = RangeCut(start, end)
   spectra = load_train_data()[0]
 
@@ -14,7 +14,7 @@ def test_range_cut():
   spectra_cut = range_cut.apply_to(spectra)
 
   # Assert
-  assert spectra_cut.shape == (21, 100)
+  assert spectra_cut.shape == (21, 446)
 
 def test_derivate():
   # Arrange
