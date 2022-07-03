@@ -4,9 +4,9 @@ import numpy as np
 
 def plot_predictions(predictions: np.ndarray, reference: np.ndarray) -> None:
     """
-    Plots predictions and reference.
-    @param predictions: predictions
-    @param reference: reference
+    Plots the PLS predictions and the reference hplc measurements for the training set.
+    @param predictions predicted concentrations.
+    @param reference reference hplc measurements.
     """
 
     plt.figure(figsize=(5, 4))

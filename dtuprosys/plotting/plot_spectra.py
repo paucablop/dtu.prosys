@@ -5,10 +5,10 @@ import pandas as pd
 def plot_spectra(spectra: pd.DataFrame, title: str, xlabel: str, ylabel: str):
     """
     Plots spectra.
-    @param spectra: list of lists of spectra
-    @param title: title of plot
-    @param xlabel: x-axis label
-    @param ylabel: y-axis label
+    @param spectra dataframe containing the spectra with the wavenumbers as columns.
+    @param title title of plot
+    @param xlabel x-axis label
+    @param ylabel y-axis label
     """
 
     plt.figure(figsize=(10, 3))

@@ -1,6 +1,9 @@
 from dtuprosys.datasets import load_train_data, load_fermentation_data
 
 def test_train_loadings():
+  """
+  Test the loading of the training data.
+  """
   # Arrange
 
   # Act
@@ -12,7 +15,10 @@ def test_train_loadings():
 
 
 def test_fermentation_loadings():
-  # Arrange
+  """
+  Test the loading of the fermentation data.
+  """
+   # Arrange
 
   # Act
   spectra, reference = load_fermentation_data()

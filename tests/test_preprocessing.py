@@ -4,6 +4,9 @@ from dtuprosys.preprocessing import RangeCut, Derivative
 import pandas as pd
 
 def test_range_cut():
+  """
+  Test the range cut.
+  """
   # Arrange
   start = 950
   end = 1550
@@ -17,6 +20,9 @@ def test_range_cut():
   assert spectra_cut.shape == (21, 446)
 
 def test_derivate():
+  """
+  Test the derivative.
+  """
   # Arrange
   derivative_order = 1
   window_length = 15

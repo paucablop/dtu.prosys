@@ -5,7 +5,7 @@ import pandas as pd
 
 def plot_fermentation(prediction: np.ndarray, fermentation_hplc: pd.DataFrame) -> None:
     """
-    Plots predictions and reference.
+    Plots the predicted concentration and the reference hplc measurements.
     @param prediction load the predictions.
     @param fermentation_hplc load the reference hplc measurements.
     """

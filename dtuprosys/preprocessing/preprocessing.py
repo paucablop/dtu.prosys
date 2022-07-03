@@ -5,14 +5,14 @@ import pandas as pd
 
 class RangeCut:
     """
-    Cuts a range from a dataframe.
+    Cuts a dataframe selecting the wavenumbers between start and end.
     """
 
     def __init__(self, start: int, end: int):
         """
         Constructor.
-        @param start: start wavenumber
-        @param end: end wavenumber
+        @param start start wavenumber
+        @param end end wavenumber
         """
         self.start = start
         self.end = end
@@ -20,15 +20,15 @@ class RangeCut:
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
         Applies the cut to the dataframe.
-        @param x: dataframe
-        @return: dataframe with cut
+        @param x dataframe
+        @return range cut dataframe
         """
         return x.loc[:, self.start : self.end]
 
 
 class Derivative:
     """
-    Calculates the derivative of a each row in a dataframe.
+    Calculates the derivative of a each row in a dataframe using the Savitzky-Golay filter.
     """
 
     def __init__(
@@ -36,9 +36,9 @@ class Derivative:
     ):
         """
         Constructor.
-        @param derivative_order: derivative order
-        @param window_length: window length
-        @param polynomial_order: polynomial order
+        @param derivative_order derivative order
+        @param window_length window length
+        @param polynomial_order polynomial order
         """
         self.derivative_order = derivative_order
         self.window_length = window_length
@@ -47,8 +47,8 @@ class Derivative:
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
         Applies the derivative to the dataframe.
-        @param x: dataframe
-        @return: dataframe with derivative
+        @param x dataframe containing the spectra with the wavenumbers as columns.
+        @return dataframe with derivative
         """
         derivate = pd.DataFrame(savgol_filter(
             x, self.window_length, self.polynomial_order, deriv=self.derivative_order
