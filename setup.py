@@ -32,4 +32,5 @@ setuptools.setup(
         "scipy==1.9.0rc1",
         "scikit-learn==1.1.1",
     ],
+    include_package_data=True,
 )
