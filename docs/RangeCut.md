@@ -1,7 +1,7 @@
 # RangeCut
 
 
-Cuts a range from a dataframe. 
+Cuts a dataframe selecting the wavenumbers between start and end. 
 
 ## Methods
 
@@ -14,11 +14,9 @@ Constructor.
 #### Parameters
 name | description | default
 --- | --- | ---
-start: | start wavenumber | 
-end: | end wavenumber | 
+start | start wavenumber | 
+end | end wavenumber | 
 self |  | 
-start |  | 
-end |  | 
 
 
 
@@ -32,9 +30,8 @@ Applies the cut to the dataframe.
 #### Parameters
 name | description | default
 --- | --- | ---
-x: | dataframe | 
+x | dataframe | 
 self |  | 
-x |  | 
 
 
 
