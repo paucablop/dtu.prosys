@@ -55,23 +55,3 @@ class Derivative:
         ))
         derivate.columns = x.columns
         return derivate
-
-
-
-class StandardNormalVariate:
-    """
-    Standardizes the dataframe.
-    """
-
-    def __init__(self):
-        pass
-
-    def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
-        """
-        Applies the standardization to the dataframe.
-        @param x: dataframe
-        @return: dataframe with standardization
-        """
-        means = x.mean(axis=1)
-        standard_deviations = x.std(axis=1)
-        return (x - means) / standard_deviations
