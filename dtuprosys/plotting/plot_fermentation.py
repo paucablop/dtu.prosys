@@ -6,6 +6,8 @@ import pandas as pd
 def plot_fermentation(prediction: np.ndarray, fermentation_hplc: pd.DataFrame) -> None:
     """
     Plots predictions and reference.
+    @param prediction load the predictions.
+    @param fermentation_hplc load the reference hplc measurements.
     """
 
     time = np.linspace(0, len(prediction), len(prediction))
