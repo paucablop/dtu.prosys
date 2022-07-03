@@ -25,12 +25,12 @@ setuptools.setup(
     packages=setuptools.find_packages(where="."),
     python_requires=">=3.6",
     install_requires=[
-        "numpy==1.23.0",
-        "pandas==1.4.3",
-        "matplotlib==3.5.2",
-        "mbpls==1.0.8b1",
-        "scipy==1.9.0rc1",
-        "scikit-learn==1.1.1",
+        "numpy",
+        "pandas",
+        "matplotlib",
+        "mbpls",
+        "scipy",
+        "scikit-learn",
     ],
     include_package_data=True,
     package_data={'': ['datasets/data/*.csv']}
