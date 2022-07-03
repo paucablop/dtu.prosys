@@ -14,8 +14,8 @@ Constructor.
 #### Parameters
 name | description | default
 --- | --- | ---
-start: | start index | 
-end: | end index | 
+start: | start wavenumber | 
+end: | end wavenumber | 
 self |  | 
 start |  | 
 end |  | 
