@@ -30,7 +30,7 @@ Applies the cut to the dataframe.
 #### Parameters
 name | description | default
 --- | --- | ---
-x | dataframe | 
+x | dataframe containing the spectra with the wavenumbers as columns. | 
 self |  | 
 
 
