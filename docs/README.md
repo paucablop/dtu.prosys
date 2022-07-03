@@ -57,19 +57,73 @@ Loads the fermentation data.
 
 
 
-### plot_spectra
+### plot_predictions
 
 
-Plots spectra. spectra: list of lists of spectra labels: list of labels title: title of plot xlabel: x-axis label ylabel: y-axis label save_path: path to save plot 
+Plots predictions and reference. 
 #### Parameters
 name | description | default
 --- | --- | ---
+predictions: | predictions | 
+reference: | reference | 
+predictions |  | 
+reference |  | 
+
+
+
+
+
+### plot_spectra
+
+
+Plots spectra. 
+#### Parameters
+name | description | default
+--- | --- | ---
+spectra: | list of lists of spectra | 
+title: | title of plot | 
+xlabel: | x-axis label | 
+ylabel: | y-axis label | 
 spectra |  | 
-labels |  | 
 title |  | 
 xlabel |  | 
 ylabel |  | 
-save_path |  | 
+
+
+
+
+
+### plot_fermentation
+
+
+Plots predictions and reference. 
+#### Parameters
+name | description | default
+--- | --- | ---
+prediction: | predictions | 
+fermentation_hplc: | hplc measurements | 
+prediction |  | 
+fermentation_hplc |  | 
+
+
+
+
+
+### cross_validation
+
+
+Performs cross-validation on the data. 
+#### Parameters
+name | description | default
+--- | --- | ---
+X: | dataframe of features | 
+y: | dataframe of target | 
+n_folds: | number of folds | 
+n_components: | number of components | 
+X |  | 
+y |  | 
+n_folds |  | 5
+n_components |  | 2
 
 
 
