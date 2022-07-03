@@ -40,6 +40,4 @@ def cross_validation(
     plt.legend()
     plt.show()
 
-    # Print MSE
-    print("MSE:", )
     return None
