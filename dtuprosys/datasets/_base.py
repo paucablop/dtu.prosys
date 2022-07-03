@@ -3,7 +3,7 @@ import os
 
 PACKAGE_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
-def load_train_data() -> tuple[pd.DataFrame, pd.DataFrame]:
+def load_train_data():
     """
     Loads the train data.
     @return train_spectra: spectra in the training data.
@@ -16,7 +16,7 @@ def load_train_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     return train_spectra, train_hplc
 
 
-def load_fermentation_data() -> tuple[pd.DataFrame, pd.DataFrame]:
+def load_fermentation_data():
     """
     Loads the fermentation data.
     @return fermentation_spectra: spectra measured during the fermentation.
