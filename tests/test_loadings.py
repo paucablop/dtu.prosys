@@ -11,7 +11,7 @@ def test_train_loadings():
 
   # Assert
   assert spectra.shape == (21, 1047)
-  assert reference.shape == (21, 3)
+  assert reference.shape == (21, 1)
 
 
 def test_fermentation_loadings():
