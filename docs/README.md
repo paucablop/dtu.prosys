@@ -2,9 +2,9 @@
 
 ## Classes
 
-**[RangeCut](RangeCut.md)**: Cuts a range from a dataframe. 
+**[RangeCut](RangeCut.md)**: Cuts a dataframe selecting the wavenumbers between start and end. 
 
-**[Derivative](Derivative.md)**: Calculates the derivative of a each row in a dataframe. 
+**[Derivative](Derivative.md)**: Calculates the derivative of a each row in a dataframe using the Savitzky-Golay filter. 
 
 
 ## Functions
@@ -12,7 +12,7 @@
 ### test_range_cut
 
 
-
+Test the range cut. 
 
 
 
@@ -20,7 +20,7 @@
 ### test_derivate
 
 
-
+Test the derivative. 
 
 
 
@@ -28,7 +28,7 @@
 ### test_train_loadings
 
 
-
+Test the loading of the training data. 
 
 
 
@@ -36,7 +36,7 @@
 ### test_fermentation_loadings
 
 
-
+Test the loading of the fermentation data. 
 
 
 
@@ -60,14 +60,12 @@ Loads the fermentation data.
 ### plot_predictions
 
 
-Plots predictions and reference. 
+Plots the PLS predictions and the reference hplc measurements for the training set. 
 #### Parameters
 name | description | default
 --- | --- | ---
-predictions: | predictions | 
-reference: | reference | 
-predictions |  | 
-reference |  | 
+predictions | predicted concentrations. | 
+reference | reference hplc measurements. | 
 
 
 
@@ -80,14 +78,10 @@ Plots spectra.
 #### Parameters
 name | description | default
 --- | --- | ---
-spectra: | list of lists of spectra | 
-title: | title of plot | 
-xlabel: | x-axis label | 
-ylabel: | y-axis label | 
-spectra |  | 
-title |  | 
-xlabel |  | 
-ylabel |  | 
+spectra | dataframe containing the spectra with the wavenumbers as columns. | 
+title | title of plot | 
+xlabel | x-axis label | 
+ylabel | y-axis label | 
 
 
 
@@ -96,7 +90,7 @@ ylabel |  |
 ### plot_fermentation
 
 
-Plots predictions and reference. 
+Plots the predicted concentration and the reference hplc measurements. 
 #### Parameters
 name | description | default
 --- | --- | ---
@@ -110,18 +104,12 @@ fermentation_hplc | load the reference hplc measurements. |
 ### cross_validation
 
 
-Performs cross-validation on the data. 
+Performs cross-validation on the data. By default it performs a leave-one-out cross-validation. 
 #### Parameters
 name | description | default
 --- | --- | ---
-X: | dataframe of features | 
-y: | dataframe of target | 
-n_folds: | number of folds | 
-n_components: | number of components | 
-X |  | 
-y |  | 
-n_folds |  | 5
-n_components |  | 2
+X | spectra dataframe containing the spectra with the wavenumbers as columns. | 
+y | dataframe containing the reference hplc measurements. | 
 
 
 

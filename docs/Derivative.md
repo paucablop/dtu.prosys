@@ -1,7 +1,7 @@
 # Derivative
 
 
-Calculates the derivative of a each row in a dataframe. 
+Calculates the derivative of a each row in a dataframe using the Savitzky-Golay filter. 
 
 ## Methods
 
@@ -14,13 +14,10 @@ Constructor.
 #### Parameters
 name | description | default
 --- | --- | ---
-derivative_order: | derivative order | 
-window_length: | window length | 
-polynomial_order: | polynomial order | 
+derivative_order | derivative order | 
+window_length | window length | 15
+polynomial_order | polynomial order | 1
 self |  | 
-derivative_order |  | 
-window_length |  | 15
-polynomial_order |  | 1
 
 
 
@@ -34,9 +31,8 @@ Applies the derivative to the dataframe.
 #### Parameters
 name | description | default
 --- | --- | ---
-x: | dataframe | 
+x | dataframe containing the spectra with the wavenumbers as columns. | 
 self |  | 
-x |  | 
 
 
 
