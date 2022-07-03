@@ -21,8 +21,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "dtuprosys"},
-    packages=setuptools.find_packages(where="dtuprosys"),
+    package_dir={"": "."},
+    packages=setuptools.find_packages(where="."),
     python_requires=">=3.9",
     install_requires=[
         "numpy==1.23.0",
