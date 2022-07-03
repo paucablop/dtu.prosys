@@ -20,7 +20,7 @@ class RangeCut:
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
         Applies the cut to the dataframe.
-        @param x dataframe
+        @param x dataframe containing the spectra with the wavenumbers as columns.
         @return range cut dataframe
         """
         return x.loc[:, self.start : self.end]
