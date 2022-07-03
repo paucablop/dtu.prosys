@@ -100,8 +100,6 @@ Plots predictions and reference.
 #### Parameters
 name | description | default
 --- | --- | ---
-prediction: | predictions | 
-fermentation_hplc: | hplc measurements | 
 prediction |  | 
 fermentation_hplc |  | 
 
