@@ -15,5 +15,5 @@ def plot_spectra(spectra: pd.DataFrame, title: str, xlabel: str, ylabel: str):
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
-    plt.plot(spectra.columns, spectra.T)
+    plt.plot(spectra.columns, spectra.T.values)
     return None
