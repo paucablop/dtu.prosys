@@ -41,6 +41,20 @@ Test the loading of the fermentation data.
 
 
 
+### cross_validation
+
+
+Performs cross-validation on the data. By default it performs a leave-one-out cross-validation. 
+#### Parameters
+name | description | default
+--- | --- | ---
+X | spectra dataframe containing the spectra with the wavenumbers as columns. | 
+y | dataframe containing the reference hplc measurements. | 
+
+
+
+
+
 ### load_train_data
 
 
@@ -57,15 +71,15 @@ Loads the fermentation data.
 
 
 
-### plot_predictions
+### plot_fermentation
 
 
-Plots the PLS predictions and the reference hplc measurements for the training set. 
+Plots the predicted concentration and the reference hplc measurements. 
 #### Parameters
 name | description | default
 --- | --- | ---
-predictions | predicted concentrations. | 
-reference | reference hplc measurements. | 
+prediction | load the predictions. | 
+fermentation_hplc | load the reference hplc measurements. | 
 
 
 
@@ -87,29 +101,15 @@ ylabel | y-axis label |
 
 
 
-### plot_fermentation
+### plot_predictions
 
 
-Plots the predicted concentration and the reference hplc measurements. 
+Plots the PLS predictions and the reference hplc measurements for the training set. 
 #### Parameters
 name | description | default
 --- | --- | ---
-prediction | load the predictions. | 
-fermentation_hplc | load the reference hplc measurements. | 
-
-
-
-
-
-### cross_validation
-
-
-Performs cross-validation on the data. By default it performs a leave-one-out cross-validation. 
-#### Parameters
-name | description | default
---- | --- | ---
-X | spectra dataframe containing the spectra with the wavenumbers as columns. | 
-y | dataframe containing the reference hplc measurements. | 
+predictions | predicted concentrations. | 
+reference | reference hplc measurements. | 
 
 
 
