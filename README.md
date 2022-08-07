@@ -1,14 +1,20 @@
 # dtu.prosys
 
 ## About this project 🚀
-This project intends to be a didactic tool to teach spectroscopy and chemometrics in the context of fermentation technology. During my studies, I often felt that many courses were theory-based only due to the rather limited access to real-world data. For this reason, I have decided to distribute the laboratory data I generated during my studies to provide a better learning experience for the upcomming generations of students. 
+This project intends to be a didactic tool to teach spectroscopy and chemometrics in the context of fermentation technology. During my studies, I often felt that many courses were theory-based only due to the limited access to real-world data. For this reason, I have decided to distribute the data I generated during my studies hoping to improve the learning experience of future students. 
 
-Although the main goal of this project is to distribute the data, I have also provided a set of functions that can be used to  investigate the data and build partial least squares (PLS) models to predict the glucose concentration.
+This module contains:
+ - Training data (spectra of different samples and the glucose concentration). 
+ - Fermentation spectra (spectra measured in _real-time_ every minute).
+ - Fermentation HPLC data (measured off-line every hour).
+ - Common preprocessing operations used in chemometrics.
+ - Workflow to train partial least squares (PLS) models.
+ - Plotting functions for time-series and spectral data.
 
 These functions can be used as a starting point for the, but more advanced users are encouradged to explore other packages to play with this data (e.g., ```scikit-learn```, or ```scipy```). 
 
 ## About the data 📈
-This project provides two datasets (a training and a validation set). Both data sets were recorded at the Technical University of Denmar, Department of Chemical and Biochemical Engineering, at the PROSYS center during 2019. More information about the dataset can be found in the following publication [Transforming data to information: A parallel hybrid model for real-time state estimation in lignocellulosic ethanol fermentation](https://onlinelibrary.wiley.com/doi/10.1002/bit.27586)
+This project provides two datasets (a training and a validation set). Both data sets were recorded at the Technical University of Denmark, at the PROSYS research center (department of Chemical and Biochemical engineering) during 2019. More information about the dataset can be found in the following article [Transforming data to information: A parallel hybrid model for real-time state estimation in lignocellulosic ethanol fermentation](https://onlinelibrary.wiley.com/doi/10.1002/bit.27586)
 
 ### The training set
 The training set contains the spectra of 20 semi-synthetic samples and their reference glucose concentration measured with high performance liquid chromatography (HPLC). The spectra were measured using attenuated total refractance mid infrared (ATR-MIR) spectroscopy.
@@ -18,7 +24,7 @@ The validation contains spectra measured every minute during a lignocellulose to
 
 ## Installation 💻
 ### Dependencies
-This project is build targetting Python >= 3.7, in order to be compatible with the python distribution in Google Colab.
+This project is build targetting Python >= 3.7 to ensure compatibility with Google Colab.
 
 ### User installation ```pip```
 
@@ -26,12 +32,11 @@ This project is build targetting Python >= 3.7, in order to be compatible with t
 pip install -U dtuprosys
 ```
 
-## Quick start
-A complete example of can be found in the ```example.ipynb```. The data can be accessed using as follows:
+## Quick start 🏁
+A complete example of can be found in the [```example.ipynb```](https://github.com/paucablop/dtu.prosys/blob/main/example.ipynb). The raw data can be conviniently accessed using as the following commands:
 
 ```
 from dtuprosys.datasets import load_train_data, load_fermentation_data
-
 ```
 to access the training data
 
@@ -42,10 +47,3 @@ to access the validation data:
 ```
 fermentation_spectra, fermentation_hplc = load_fermentation_data()
 ``` 
-
-Additional functions, include:
-- Common preprocessing steps for spectral data
-- Plotting tools for spectra, and time series data
-- Functions to assist modeling spectral data and model training
-
-
