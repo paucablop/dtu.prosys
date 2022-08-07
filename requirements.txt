@@ -22,15 +22,15 @@ joblib==1.1.0; python_version >= '3.6'
 
 kiwisolver==1.4.3; python_version >= '3.7'
 
-matplotlib==3.5.2
+matplotlib
 
-mbpls==1.0.8b1
+mbpls
 
-numpy==1.23.0
+numpy
 
 packaging==21.3; python_version >= '3.6'
 
-pandas==1.4.3
+pandas
 
 pillow==9.2.0; python_version >= '3.7'
 
@@ -40,9 +40,9 @@ python-dateutil==2.8.2; python_version >= '2.7' and python_version not in '3.0, 
 
 pytz==2022.1
 
-scikit-learn==1.1.1
+scikit-learn
 
-scipy==1.9.0rc1
+scipy
 
 six==1.16.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
 

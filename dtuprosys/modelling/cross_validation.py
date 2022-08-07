@@ -19,14 +19,14 @@ def cross_validation(X: pd.DataFrame, y: pd.DataFrame) -> None:
     # Initialize cross-validation parameters
     cv = LeaveOneOut()
     param_name = "n_components"
-    param_range = range(1, 10)
+    param_range = range(1, 8)
     scoring = "neg_root_mean_squared_error"
 
     # Perform cross-validation
     test_scores, validation_scores = validation_curve(
         model,
-        X,
-        y,
+        X.values,
+        y.values,
         cv=cv,
         param_name=param_name,
         param_range=param_range,
