@@ -1,4 +1,4 @@
-from dtuprosys.datasets import load_train_data, load_fermentation_data
+from dtuprosys.chemometrics.datasets import load_train_data, load_fermentation_data
 
 def test_train_loadings():
   """

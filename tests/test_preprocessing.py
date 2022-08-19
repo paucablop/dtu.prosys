@@ -1,5 +1,5 @@
-from dtuprosys.datasets import load_train_data
-from dtuprosys.preprocessing import RangeCut, Derivative
+from dtuprosys.chemometrics.datasets import load_train_data
+from dtuprosys.chemometrics.preprocessing import RangeCut, Derivative
 
 import pandas as pd
 
