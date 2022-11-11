@@ -9,7 +9,7 @@ class RangeCut:
     Cuts a dataframe selecting the wavenumbers between start and end.
     """
 
-    def __init__(self, start: int, end: int):
+    def __init__(self, start: int, end: int, include: bool = True):
         """
         Constructor.
         @param start start wavenumber
@@ -17,6 +17,7 @@ class RangeCut:
         """
         self.start = start
         self.end = end
+        self.include = include
 
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
@@ -24,6 +25,9 @@ class RangeCut:
         @param x dataframe containing the spectra with the wavenumbers as columns.
         @return range cut dataframe
         """
+        if not self.include:
+            return x
+
         return x.loc[:, self.start : self.end]
 
 
@@ -33,7 +37,7 @@ class Derivative:
     """
 
     def __init__(
-        self, derivative_order: int, window_length: int = 15, polynomial_order: int = 1
+        self, derivative_order: int, window_length: int = 15, polynomial_order: int = 1, include: bool = True
     ):
         """
         Constructor.
@@ -48,6 +52,7 @@ class Derivative:
             self.polynomial_order = polynomial_order
         self.derivative_order = derivative_order
         self.window_length = window_length
+        self.include = include
 
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
@@ -55,6 +60,9 @@ class Derivative:
         @param x dataframe containing the spectra with the wavenumbers as columns.
         @return dataframe with derivative
         """
+        if not self.include:
+            return x
+
         derivate = pd.DataFrame(savgol_filter(
             x, self.window_length, self.polynomial_order, deriv=self.derivative_order
         ))
@@ -66,12 +74,13 @@ class DriftCorrection:
     Corrects the drift in a dataframe.
     """
 
-    def __init__(self):
+    def __init__(self, include):
         """
         Constructor.
         @param window_length window length
         @param polynomial_order polynomial order
         """
+        self.include = include
 
     def _drift_correct(self, x: pd.DataFrame) -> pd.DataFrame:
         """
@@ -79,6 +88,9 @@ class DriftCorrection:
         @param x dataframe containing the spectra with the wavenumbers as columns.
         @return dataframe with drift corrected spectra
         """
+        if not self.include:
+            return x
+            
         y1: float = x.iloc[0]
         y2: float = x.iloc[-1]
 
