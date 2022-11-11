@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def cross_validation(X: pd.DataFrame, y: pd.DataFrame, nr_components: int = 8) -> None:
+def cross_validation(X: pd.DataFrame, y: pd.DataFrame, nr_components: int = 6) -> None:
     """
     Performs cross-validation on the data. By default it performs a leave-one-out cross-validation.
     @param X spectra dataframe containing the spectra with the wavenumbers as columns.
