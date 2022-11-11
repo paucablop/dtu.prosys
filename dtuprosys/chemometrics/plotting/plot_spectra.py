@@ -14,7 +14,7 @@ def plot_spectra(spectra: pd.DataFrame, title: str, xlabel: str, ylabel: str, re
     """
 
     if reference is not None:
-        reference = reference.values
+        reference = reference.values.flatten()
         norm = plt.Normalize(reference.min(), reference.max())
         cmap = plt.get_cmap('viridis')
         colormap = cmap(norm(reference))
