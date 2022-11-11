@@ -9,8 +9,10 @@ def plot_predictions(predictions: np.ndarray, reference: np.ndarray) -> None:
     @param reference reference hplc measurements.
     """
 
+    rmse = np.sqrt(np.mean((predictions - reference.values) ** 2))
+
     plt.figure(figsize=(5, 4))
-    plt.title("Predictions")
+    plt.title("Predictions vs. Reference (RMSE = {:.4f})".format(rmse))
     plt.xlabel("Reference")
     plt.ylabel("Prediction")
     plt.plot(reference, predictions, "o", color="blue")
