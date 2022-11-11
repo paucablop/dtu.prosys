@@ -1,4 +1,5 @@
 from scipy.signal import savgol_filter
+import logging
 import numpy as np
 import pandas as pd
 
@@ -40,7 +41,11 @@ class Derivative:
         @param window_length window length
         @param polynomial_order polynomial order
         """
-        self.polynomial_order = polynomial_order
+        if polynomial_order < derivative_order:
+            self.polynomial_order = derivative_order
+            logging.warning("Polynomial order must be >= derivative order, setting polynomial order to derivative order.")
+        else:
+            self.polynomial_order = polynomial_order
         self.derivative_order = derivative_order
         self.window_length = window_length
 
