@@ -1,5 +1,5 @@
 from scipy.signal import savgol_filter
-
+import numpy as np
 import pandas as pd
 
 
@@ -40,9 +40,9 @@ class Derivative:
         @param window_length window length
         @param polynomial_order polynomial order
         """
+        self.polynomial_order = polynomial_order
         self.derivative_order = derivative_order
         self.window_length = window_length
-        self.polynomial_order = polynomial_order
 
     def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
         """
@@ -55,3 +55,43 @@ class Derivative:
         ))
         derivate.columns = x.columns
         return derivate
+
+class DriftCorrection:
+    """
+    Corrects the drift in a dataframe.
+    """
+
+    def __init__(self):
+        """
+        Constructor.
+        @param window_length window length
+        @param polynomial_order polynomial order
+        """
+
+    def _drift_correct(self, x: pd.DataFrame) -> pd.DataFrame:
+        """
+        Applies the drift correction to the dataframe.
+        @param x dataframe containing the spectra with the wavenumbers as columns.
+        @return dataframe with drift corrected spectra
+        """
+        y1: float = x.iloc[0]
+        y2: float = x.iloc[-1]
+
+        x1: float = 0
+        x2: float = x.shape[0]
+
+        x_range = np.linspace(x1, x2, x2)
+        slope: float = (y2 - y1) / (x2 - x1)
+        intercept: float = y1 - slope * x1
+
+        return x - (slope * x_range + intercept)
+
+
+
+    def apply_to(self, x: pd.DataFrame) -> pd.DataFrame:
+        """
+        Applies the drift correction to the dataframe.
+        @param x dataframe containing the spectra with the wavenumbers as columns.
+        @return dataframe with drift corrected spectra
+        """
+        return x.apply(self._drift_correct, axis=1)
