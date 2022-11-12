@@ -130,5 +130,4 @@ mypy.ini
 .pyre/
 
 # vscode
-.vscode/
 
