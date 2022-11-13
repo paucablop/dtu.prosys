@@ -6,37 +6,66 @@
 
 **[Derivative](Derivative.md)**: Calculates the derivative of a each row in a dataframe using the Savitzky-Golay filter. 
 
+**[DriftCorrection](DriftCorrection.md)**: Corrects the drift in a dataframe. 
+
 
 ## Functions
 
-### test_range_cut
+### plot_spectra
 
 
-Test the range cut. 
-
-
-
-
-### test_derivate
-
-
-Test the derivative. 
-
-
-
-
-### test_train_loadings
-
-
-Test the loading of the training data. 
+Plots spectra. 
+#### Parameters
+name | description | default
+--- | --- | ---
+spectra | dataframe containing the spectra with the wavenumbers as columns | 
+title | title of plot | 
+xlabel | x-axis label | 
+ylabel | y-axis label | 
+reference | dataframe containing the reference spectra with the wavenumbers as columns | None
 
 
 
 
-### test_fermentation_loadings
+
+### plot_predictions
 
 
-Test the loading of the fermentation data. 
+Plots the PLS predictions and the reference hplc measurements for the training set. 
+#### Parameters
+name | description | default
+--- | --- | ---
+predictions | predicted concentrations. | 
+reference | reference hplc measurements. | 
+
+
+
+
+
+### plot_fermentation
+
+
+Plots the predicted concentration and the reference hplc measurements. 
+#### Parameters
+name | description | default
+--- | --- | ---
+prediction | load the predictions. | 
+fermentation_hplc | load the reference hplc measurements. | 
+
+
+
+
+
+### _calculate_rmse
+
+
+Calculates the root mean squared error. 
+#### Parameters
+name | description | default
+--- | --- | ---
+prediction | load the predictions. | 
+fermentation_hplc | load the reference hplc measurements. | 
+
 
 
 
@@ -50,6 +79,7 @@ name | description | default
 --- | --- | ---
 X | spectra dataframe containing the spectra with the wavenumbers as columns. | 
 y | dataframe containing the reference hplc measurements. | 
+nr_components |  | 6
 
 
 
@@ -71,46 +101,34 @@ Loads the fermentation data.
 
 
 
-### plot_fermentation
+### test_train_loadings
 
 
-Plots the predicted concentration and the reference hplc measurements. 
-#### Parameters
-name | description | default
---- | --- | ---
-prediction | load the predictions. | 
-fermentation_hplc | load the reference hplc measurements. | 
+Test the loading of the training data. 
 
 
 
 
+### test_fermentation_loadings
 
-### plot_spectra
 
-
-Plots spectra. 
-#### Parameters
-name | description | default
---- | --- | ---
-spectra | dataframe containing the spectra with the wavenumbers as columns. | 
-title | title of plot | 
-xlabel | x-axis label | 
-ylabel | y-axis label | 
+Test the loading of the fermentation data. 
 
 
 
 
+### test_range_cut
 
-### plot_predictions
+
+Test the range cut. 
 
 
-Plots the PLS predictions and the reference hplc measurements for the training set. 
-#### Parameters
-name | description | default
---- | --- | ---
-predictions | predicted concentrations. | 
-reference | reference hplc measurements. | 
 
+
+### test_derivate
+
+
+Test the derivative. 
 
 
 
